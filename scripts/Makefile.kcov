@@ -1,0 +1,6 @@
+ifeq ($(CONFIG_KCOV_ENABLE_COMPARISONS),y)
+ifneq ($(cc-name),clang)
+  $(warning Cannot use CONFIG_KCOV_ENABLE_COMPARISONS: \
+            -fsanitize=trace-cmp is not supported by compiler)
+endif
+endif
